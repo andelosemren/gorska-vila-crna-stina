@@ -1,0 +1,460 @@
+.hero {
+  position: relative;
+  /* Koristimo calc da oduzmemo navbar ako ne želimo da ide skroz ispod njega, 
+     ali pošto je navbar fixed i providan, 100vh je idealno. */
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  margin-top: -120px; /* Vraća hero sekciju na vrh ekrana ispod providnog navbara */
+}
+
+/* Kontejner koji drži video */
+.video-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Tvoj video koji savršeno popunjava ekran */
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none; 
+}
+
+/* OVO VEĆ IMAŠ, ALI PROVJERI DA JE TU: Ovaj tamni filter ide PREKO videa da bi se bijela slova bolje vidjela */
+/* DARK OVERLAY: Ovaj tamni filter ide PREKO videa da bi se bijela slova bolje vidjela */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(13, 17, 23, 0.7) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(13, 17, 23, 0.9) 100%
+  );
+  z-index: 1;
+}
+
+/* CONTENT */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.subtitle {
+  font-size: 14px;
+  letter-spacing: 4px;
+  color: #f0c27b;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.hero h1 {
+  font-size: 72px; /* Malo veći naslov za premium osećaj */
+  letter-spacing: 8px;
+  margin: 10px 0;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+  color: #ddd;
+}
+
+.hero-btn {
+  text-decoration: none;
+  color: white;
+  border: 1px solid #f0c27b;
+  padding: 16px 40px;
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+  background: rgba(240, 194, 123, 0.05);
+}
+
+.hero-btn:hover {
+  background: #f0c27b;
+  color: #0d1117;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(240, 194, 123, 0.2);
+}
+
+/* --- SEKCIJA O VILI --- */
+.about-villa {
+    background-color: #0d1117; /* Ista tamna boja tvog dizajna */
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-container h2 {
+    color: #f0c27b; /* Tvoja zlatna boja */
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.about-text {
+    color: #aaa;
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    line-height: 1.8;
+}
+
+/* --- MREŽA ZA KARTICE (FEATURES) --- */
+.features-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap; /* Ako netko gleda na mobitelu, padaju jedno ispod drugog */
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(240, 194, 123, 0.1);
+    padding: 40px 20px;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px); /* Efekt podizanja kad prijeđeš mišem */
+    box-shadow: 0 10px 30px rgba(240, 194, 123, 0.05);
+    border-color: rgba(240, 194, 123, 0.3);
+}
+
+.feature-card .icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    color: white;
+    font-size: 22px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.feature-card p {
+    color: #888;
+    font-size: 15px;
+    line-height: 1.6;
+}
+/* --- LOKACIJA SEKCIJA --- */
+.location-section {
+    background-color: #0d1117; /* Nastavlja tvoju tamnu temu */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.location-container {
+    max-width: 1000px; /* Nešto uže od cijelog ekrana da izgleda modernije */
+    margin: 0 auto;
+}
+
+.location-container h2 {
+    color: #f0c27b;
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+.location-text {
+    color: #aaa;
+    font-size: 18px;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+/* Moderni okvir za kartu */
+.map-wrapper {
+    display: block;
+    position: relative;
+    border-radius: 15px; /* Zaobljeni rubovi */
+    overflow: hidden;
+    border: 1px solid rgba(240, 194, 123, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.map-wrapper:hover {
+    transform: translateY(-5px); /* Karta se malo podigne kad pređeš mišem */
+    border-color: #f0c27b;
+    box-shadow: 0 15px 40px rgba(240, 194, 123, 0.15);
+}
+
+/* Trik da spriječimo iframe da ukrade klik - KLJUČNO! */
+.map-wrapper iframe {
+    width: 100%;
+    height: 450px;
+    display: block;
+    pointer-events: none; /* Ne dozvoljava skrolanje unutar karte */
+    
+    /* Zatamnjujemo kartu da paše uz tamni dizajn */
+    filter: grayscale(60%) contrast(1.2) brightness(0.7); 
+    transition: all 0.4s ease;
+}
+
+.map-wrapper:hover iframe {
+    /* Vraća joj prave boje na hover */
+    filter: grayscale(0%) contrast(1) brightness(1); 
+}
+
+/* Onaj tamni ekran i zlatni gumb što iskoči */
+.map-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(13, 17, 23, 0.4); /* Prozirna tamna pozadina */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    opacity: 0; /* Skriveno po defaultu */
+    transition: opacity 0.4s ease;
+}
+
+.map-wrapper:hover .map-overlay {
+    opacity: 1; /* Pojavljuje se na hover */
+}
+
+.map-overlay span {
+    color: #0d1117;
+    background: #f0c27b;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* --- SADRŽAJI VILE SEKCIJA --- */
+.amenities-section {
+    background-color: #0d1117;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.amenities-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.amenities-subtitle {
+    color: #888;
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.amenities-container h2 {
+    color: #f0c27b;
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 60px;
+    font-weight: 300;
+}
+
+/* Moderna mreža koja se sama slaže ovisno o ekranu */
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+/* Dizajn pojedinačne kockice (kao na tvojoj slici) */
+.amenity-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(240, 194, 123, 0.1);
+    padding: 40px 30px;
+    text-align: left; /* Zadržavamo lijevo poravnanje sa slike */
+    transition: all 0.4s ease;
+}
+
+.amenity-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(240, 194, 123, 0.5);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.amenity-icon {
+    font-size: 45px;
+    margin-bottom: 25px;
+    /* Dodaje blagi zlatni odsjaj oko emojija */
+    filter: drop-shadow(0 0 8px rgba(240, 194, 123, 0.3)); 
+}
+
+.amenity-card h3 {
+    color: white;
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.amenity-card p {
+    color: #aaa;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Magija za glatko klizanje po stranici (ako je slučajno još nisi dodao) */
+/* --- AMENITIES SECTION RE-DESIGN --- */
+.amenities-section {
+    padding: 100px 5%;
+    background-color: #0a0c0f; /* Jako tamna, luksuzna boja */
+}
+
+.amenity-card {
+    background: rgba(255, 255, 255, 0.03); /* Suptilna prozirnost */
+    border: 1px solid rgba(240, 194, 123, 0.1); /* Jako tanki zlatni rub */
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    backdrop-filter: blur(10px); /* Zamagljenje iza kartice (glass effect) */
+}
+
+/* Hover efekt - kartica se lagano digne i rub zasvijetli */
+.amenity-card:hover {
+    transform: translateY(-10px);
+    background: rgba(240, 194, 123, 0.05);
+    border-color: rgba(240, 194, 123, 0.5);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.amenity-icon {
+    font-size: 40px;
+    color: #f0c27b; /* Zlatna boja koja prati logo */
+    margin-bottom: 25px;
+    transition: 0.3s;
+}
+
+.amenity-card:hover .amenity-icon {
+    transform: scale(1.2); /* Ikona lagano naraste na hover */
+}
+
+.amenity-card h3 {
+    color: #f0c27b;
+    font-size: 20px;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.amenity-card p {
+    color: #888;
+    line-height: 1.6;
+    font-size: 14px;
+}
+/* --- FEATURE SECTION RE-DESIGN --- */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.02); /* Minimalna prozirnost */
+    border: 1px solid rgba(240, 194, 123, 0.15); /* Zlatni obrub */
+    padding: 50px 30px;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.5s ease;
+    backdrop-filter: blur(8px);
+}
+
+.feature-card:hover {
+    background: rgba(240, 194, 123, 0.08);
+    transform: translateY(-12px);
+    border-color: #f0c27b;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.feature-icon {
+    font-size: 45px;
+    color: #f0c27b; /* Zlatna boja iz logotipa */
+    margin-bottom: 25px;
+    display: inline-block;
+    transition: transform 0.4s ease;
+}
+
+.feature-card:hover .feature-icon {
+    transform: rotateY(180deg) scale(1.1); /* Fensi rotacija na hover */
+}
+
+.feature-card h3 {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.feature-card p {
+    color: #aaa;
+    font-size: 15px;
+    line-height: 1.7;
+    font-weight: 300;
+}
+/* --- ODGODA TEKSTA NA HERO VIDEU (3 SEKUNDE) --- */
+.hero-content {
+    opacity: 0; /* Početno stanje: tekst je potpuno nevidljiv */
+    /* Animacija traje 1.2 sekunde, ali ČEKA 3 sekunde prije nego krene */
+    animation: heroFadeIn 1.2s ease-out 6s forwards; 
+}
+
+@keyframes heroFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Krene malo odozdo */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Sjedne na svoje mjesto i ostane vidljivo */
+    }
+}

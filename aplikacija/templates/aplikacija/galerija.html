@@ -1,0 +1,184 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% load i18n %}
+
+{% block title %}{% trans "Galerija - Gorska Vila Crna Stina" %}{% endblock title %} 
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'aplikacija/galerija.css' %}" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+{% endblock css_files %} 
+
+{% block content %}
+<div class="page-header" style="padding-top: 150px; text-align: center">
+  <h1 style="color: #f0c27b; font-size: 42px; letter-spacing: 5px; font-weight: 300; text-transform: uppercase;">
+    {% trans "Galerija" %}
+  </h1>
+  <p style="color: #888; font-size: 16px; letter-spacing: 2px; margin-top: 10px">
+    {% trans "Zavirite u luksuz koji vas očekuje" %}
+  </p>
+</div>
+
+<section class="gallery-page">
+  <div class="gallery-container">
+    <div class="gallery-grid">
+      
+      <div class="gallery-item">
+        <a href="{% static 'aplikacija/slike/vila.jpg' %}" data-fancybox="galerija">
+            <img src="{% static 'aplikacija/slike/vila.jpg' %}" alt="{% trans 'Bazen' %}" />
+        </a>
+      </div>
+      
+      <div class="gallery-item">
+        <a href="{% static 'aplikacija/slike/galerija1.jpg' %}" data-fancybox="galerija">
+            <img src="{% static 'aplikacija/slike/galerija1.jpg' %}" alt="{% trans 'Interijer' %}" />
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="{% static 'aplikacija/slike/galerija2.jpg' %}" data-fancybox="galerija">
+            <img src="{% static 'aplikacija/slike/galerija2.jpg' %}" alt="{% trans 'slika' %}" />
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="{% static 'aplikacija/slike/galerija3.jpg' %}" data-fancybox="galerija">
+            <img src="{% static 'aplikacija/slike/galerija3.jpg' %}" alt="{% trans 'slika' %}" />
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="{% static 'aplikacija/slike/galerija4.jpg' %}" data-fancybox="galerija">
+            <img src="{% static 'aplikacija/slike/galerija4.jpg' %}" alt="{% trans 'slika' %}" />
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="{% static 'aplikacija/slike/galerija5.jpg' %}" data-fancybox="galerija">
+            <img src="{% static 'aplikacija/slike/galerija5.jpg' %}" alt="{% trans 'slika' %}" />
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="{% static 'aplikacija/slike/galerija6.jpg' %}" data-fancybox="galerija">
+            <img src="{% static 'aplikacija/slike/galerija6.jpg' %}" alt="{% trans 'slika' %}" />
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="{% static 'aplikacija/slike/galerija7.jpg' %}" data-fancybox="galerija">
+            <img src="{% static 'aplikacija/slike/galerija7.jpg' %}" alt="{% trans 'slika' %}" />
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="{% static 'aplikacija/slike/galerija8.jpg' %}" data-fancybox="galerija">
+            <img src="{% static 'aplikacija/slike/galerija8.jpg' %}" alt="{% trans 'slika' %}" />
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="{% static 'aplikacija/slike/galerija9.jpg' %}" data-fancybox="galerija">
+            <img src="{% static 'aplikacija/slike/galerija9.jpg' %}" alt="{% trans 'slika' %}" />
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="{% static 'aplikacija/slike/galerija10.jpg' %}" data-fancybox="galerija">
+            <img src="{% static 'aplikacija/slike/galerija10.jpg' %}" alt="{% trans 'slika' %}" />
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="{% static 'aplikacija/slike/galerija11.jpg' %}" data-fancybox="galerija">
+            <img src="{% static 'aplikacija/slike/galerija11.jpg' %}" alt="{% trans 'slika' %}" />
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="{% static 'aplikacija/slike/galerija12.jpg' %}" data-fancybox="galerija">
+            <img src="{% static 'aplikacija/slike/galerija12.jpg' %}" alt="{% trans 'slika' %}" />
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="{% static 'aplikacija/slike/galerija13.jpg' %}" data-fancybox="galerija">
+            <img src="{% static 'aplikacija/slike/galerija13.jpg' %}" alt="{% trans 'slika' %}" />
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="{% static 'aplikacija/slike/galerija14.jpg' %}" data-fancybox="galerija">
+            <img src="{% static 'aplikacija/slike/galerija14.jpg' %}" alt="{% trans 'slika' %}" />
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="{% static 'aplikacija/slike/galerija15.jpg' %}" data-fancybox="galerija">
+            <img src="{% static 'aplikacija/slike/galerija15.jpg' %}" alt="{% trans 'slika' %}" />
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="{% static 'aplikacija/slike/galerija16.jpg' %}" data-fancybox="galerija">
+            <img src="{% static 'aplikacija/slike/galerija16.jpg' %}" alt="{% trans 'slika' %}" />
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="{% static 'aplikacija/slike/galerija17.jpg' %}" data-fancybox="galerija">
+            <img src="{% static 'aplikacija/slike/galerija17.jpg' %}" alt="{% trans 'slika' %}" />
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="{% static 'aplikacija/slike/galerija18.jpg' %}" data-fancybox="galerija">
+            <img src="{% static 'aplikacija/slike/galerija18.jpg' %}" alt="{% trans 'slika' %}" />
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="{% static 'aplikacija/slike/galerija19.jpg' %}" data-fancybox="galerija">
+            <img src="{% static 'aplikacija/slike/galerija19.jpg' %}" alt="{% trans 'slika' %}" />
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="{% static 'aplikacija/slike/galerija20.jpg' %}" data-fancybox="galerija">
+            <img src="{% static 'aplikacija/slike/galerija20.jpg' %}" alt="{% trans 'slika' %}" />
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="{% static 'aplikacija/slike/galerija21.jpg' %}" data-fancybox="galerija">
+            <img src="{% static 'aplikacija/slike/galerija21.jpg' %}" alt="{% trans 'slika' %}" />
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="{% static 'aplikacija/slike/galerija22.jpg' %}" data-fancybox="galerija">
+            <img src="{% static 'aplikacija/slike/galerija22.jpg' %}" alt="{% trans 'slika' %}" />
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="{% static 'aplikacija/slike/galerija23.jpg' %}" data-fancybox="galerija">
+            <img src="{% static 'aplikacija/slike/galerija23.jpg' %}" alt="{% trans 'slika' %}" />
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="{% static 'aplikacija/slike/galerija24.jpg' %}" data-fancybox="galerija">
+            <img src="{% static 'aplikacija/slike/galerija24.jpg' %}" alt="{% trans 'slika' %}" />
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<script>
+  Fancybox.bind('[data-fancybox="galerija"]', {});
+</script>
+{% endblock content %}

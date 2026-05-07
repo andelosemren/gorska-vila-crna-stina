@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %} {% block title %}{% trans "Kućni red - Gorska Vila Crna Stina" %}{% endblock title %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'aplikacija/kucnired.css' %}">
+{% endblock css_files %}
+
+{% block content %}
+<div class="rules-page">
+    <div class="rules-container">
+        
+        <div class="rules-header">
+            <h1>{% trans "Kućni red" %}</h1>
+            <p>{% trans "Kako bi vaš boravak bio što ugodniji, molimo vas da se pridržavate sljedećih pravila." %}</p>
+        </div>
+
+        <div class="rules-list">
+            <div class="rule-card">
+                <div class="rule-icon"><i class="fas fa-clock"></i></div>
+                <div class="rule-text">
+                    <h3>{% trans "Prijava i Odjava" %}</h3>
+                    <p>{% blocktrans %}Prijava (Check-in) je moguća od <strong>15:00 sati</strong>. Molimo vas da vilu napustite (Check-out) do <strong>10:00 sati</strong> na dan odlaska kako bismo je stigli pripremiti za iduće goste.{% endblocktrans %}</p>
+                </div>
+            </div>
+
+            <div class="rule-card">
+                <div class="rule-icon"><i class="fas fa-smoking-ban"></i></div>
+                <div class="rule-text">
+                    <h3>{% trans "Zabranjeno pušenje" %}</h3>
+                    <p>{% blocktrans %}Pušenje unutar vile je <strong>strogo zabranjeno</strong>. Dozvoljeno je isključivo na vanjskim terasama i u dvorištu. Molimo koristite pepeljare.{% endblocktrans %}</p>
+                </div>
+            </div>
+
+            <div class="rule-card">
+                <div class="rule-icon"><i class="fas fa-volume-mute"></i></div>
+                <div class="rule-text">
+                    <h3>{% trans "Mir i tišina" %}</h3>
+                    <p>{% blocktrans %}Vila se nalazi u mirnom okruženju. Molimo vas da poštujete noćni mir i izbjegavate glasnu glazbu ili buku na otvorenom nakon <strong>22:00 sata</strong>.{% endblocktrans %}</p>
+                </div>
+            </div>
+
+            <div class="rule-card">
+                <div class="rule-icon"><i class="fas fa-paw"></i></div>
+                <div class="rule-text">
+                    <h3>{% trans "Kućni ljubimci" %}</h3>
+                    <p>{% blocktrans %}Boravak kućnih ljubimaca moguć je isključivo uz <strong>prethodni upit i odobrenje</strong> domaćina. Moguća je nadoplata za čišćenje.{% endblocktrans %}</p>
+                </div>
+            </div>
+
+            <div class="rule-card">
+                <div class="rule-icon"><i class="fas fa-glass-cheers"></i></div>
+                <div class="rule-text">
+                    <h3>{% trans "Zabave i događaji" %}</h3>
+                    <p>{% blocktrans %}Organizacija momačkih, djevojačkih večeri i sličnih velikih zabava nije dozvoljena bez izričitog prethodnog dogovora s vlasnikom.{% endblocktrans %}</p>
+                </div>
+            </div>
+
+            <div class="rule-card">
+                <div class="rule-icon"><i class="fas fa-house-damage"></i></div>
+                <div class="rule-text">
+                    <h3>{% trans "Očuvanje imovine" %}</h3>
+                    <p>{% blocktrans %}Gosti su odgovorni za svu štetu nastalu u vili ili na posjedu tijekom boravka. Svaku štetu potrebno je odmah prijaviti domaćinu.{% endblocktrans %}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock content %}

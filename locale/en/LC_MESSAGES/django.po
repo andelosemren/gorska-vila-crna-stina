@@ -1,0 +1,687 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-10 12:53+0100\n"
+"PO-Revision-Date: 2026-03-10 12:50+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: en <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# --- REZERVACIJE (BOOKING.HTML) ---
+#: .\aplikacija\templates\aplikacija\booking.html:19
+msgid "Rezervacija vile"
+msgstr "Villa Reservation"
+
+#: .\aplikacija\templates\aplikacija\booking.html:30
+msgid "Broj mobitela:"
+msgstr "Phone Number:"
+
+#: .\aplikacija\templates\aplikacija\booking.html:31
+msgid "Npr. +387 63 123 456"
+msgstr "E.g. +44 7911 123456"
+
+#: .\aplikacija\templates\aplikacija\booking.html:33
+msgid "Odaberite datume (Dolazak - Odlazak):"
+msgstr "Select dates (Check-in - Check-out):"
+
+#: .\aplikacija\templates\aplikacija\booking.html:34
+msgid "Klikni za odabir termina..."
+msgstr "Click to select dates..."
+
+#: .\aplikacija\templates\aplikacija\booking.html:41
+msgid "CJENIK PO NOĆENJU:"
+msgstr "PRICE PER NIGHT:"
+
+#: .\aplikacija\templates\aplikacija\booking.html:44
+msgid "1 - 2 noći:"
+msgstr "1 - 2 nights:"
+
+#: .\aplikacija\templates\aplikacija\booking.html:45
+msgid "3 - 4 noći:"
+msgstr "3 - 4 nights:"
+
+#: .\aplikacija\templates\aplikacija\booking.html:46
+msgid "5 - 9 noći:"
+msgstr "5 - 9 nights:"
+
+#: .\aplikacija\templates\aplikacija\booking.html:47
+msgid "10+ noći:"
+msgstr "10+ nights:"
+
+#: .\aplikacija\templates\aplikacija\booking.html:50
+#: .\aplikacija\templates\aplikacija\booking.html:100
+msgid "UKUPNO: 0 €"
+msgstr "TOTAL: 0 €"
+
+#: .\aplikacija\templates\aplikacija\booking.html:54
+msgid "POTVRDI REZERVACIJU"
+msgstr "CONFIRM RESERVATION"
+
+#: .\aplikacija\templates\aplikacija\booking.html:95
+msgid "UKUPNO"
+msgstr "TOTAL"
+
+#: .\aplikacija\templates\aplikacija\booking.html:95
+msgid "NOĆI"
+msgstr "NIGHTS"
+
+# --- GALERIJA ---
+#: .\aplikacija\templates\aplikacija\galerija.html:5
+msgid "Galerija - Gorska Vila Crna Stina"
+msgstr "Gallery - Mountain Villa Crna Stina"
+
+#: .\aplikacija\templates\aplikacija\galerija.html:15 .\templates\base.html:98
+msgid "Galerija"
+msgstr "Gallery"
+
+#: .\aplikacija\templates\aplikacija\galerija.html:18
+msgid "Zavirite u luksuz koji vas očekuje"
+msgstr "Take a peek into the luxury that awaits you"
+
+#: .\aplikacija\templates\aplikacija\galerija.html:28
+msgid "Bazen"
+msgstr "Pool"
+
+#: .\aplikacija\templates\aplikacija\galerija.html:34
+msgid "Interijer"
+msgstr "Interior"
+
+#: .\aplikacija\templates\aplikacija\galerija.html:40
+#: .\aplikacija\templates\aplikacija\galerija.html:46
+#: .\aplikacija\templates\aplikacija\galerija.html:52
+#: .\aplikacija\templates\aplikacija\galerija.html:58
+#: .\aplikacija\templates\aplikacija\galerija.html:64
+#: .\aplikacija\templates\aplikacija\galerija.html:70
+#: .\aplikacija\templates\aplikacija\galerija.html:76
+#: .\aplikacija\templates\aplikacija\galerija.html:82
+#: .\aplikacija\templates\aplikacija\galerija.html:88
+#: .\aplikacija\templates\aplikacija\galerija.html:94
+#: .\aplikacija\templates\aplikacija\galerija.html:100
+#: .\aplikacija\templates\aplikacija\galerija.html:106
+#: .\aplikacija\templates\aplikacija\galerija.html:112
+#: .\aplikacija\templates\aplikacija\galerija.html:118
+#: .\aplikacija\templates\aplikacija\galerija.html:124
+#: .\aplikacija\templates\aplikacija\galerija.html:130
+#: .\aplikacija\templates\aplikacija\galerija.html:136
+#: .\aplikacija\templates\aplikacija\galerija.html:142
+#: .\aplikacija\templates\aplikacija\galerija.html:148
+#: .\aplikacija\templates\aplikacija\galerija.html:154
+#: .\aplikacija\templates\aplikacija\galerija.html:160
+#: .\aplikacija\templates\aplikacija\galerija.html:166
+#: .\aplikacija\templates\aplikacija\galerija.html:172
+msgid "slika"
+msgstr "photo"
+
+# --- POČETNA ---
+#: .\aplikacija\templates\aplikacija\home.html:3
+msgid "Gorska Vila Crna Stina"
+msgstr "Gorska Vila Crna Stina"
+
+#: .\aplikacija\templates\aplikacija\home.html:18
+msgid "EKSKLUZIVNA LJEPOTA"
+msgstr "EXCLUSIVE BEAUTY"
+
+#: .\aplikacija\templates\aplikacija\home.html:19
+msgid "GORSKA VILA CRNA STINA"
+msgstr "GORSKA VILA CRNA STINA"
+
+#: .\aplikacija\templates\aplikacija\home.html:20
+msgid "Spoj luksuza i prirode"
+msgstr "A blend of luxury and nature"
+
+#: .\aplikacija\templates\aplikacija\home.html:21
+msgid "OTKRIJTE SADRŽAJE"
+msgstr "DISCOVER AMENITIES"
+
+#: .\aplikacija\templates\aplikacija\home.html:27
+msgid "Oaza mira u srcu prirode"
+msgstr "An oasis of peace in the heart of nature"
+
+#: .\aplikacija\templates\aplikacija\home.html:29
+msgid ""
+"Gorska Vila Crna Stina nudi savršen bijeg od užurbanog svakodnevnog života. "
+"Smještena na prekrasnoj lokaciji, naša luksuzna vila pruža vrhunski komfor, "
+"privatnost i sve što vam je potrebno za nezaboravan odmor."
+msgstr ""
+"Mountain Villa Crna Stina offers a perfect escape from busy everyday life. "
+"Situated in a beautiful location, our luxury villa provides ultimate "
+"comfort, privacy, and everything you need for an unforgettable vacation."
+
+#: .\aplikacija\templates\aplikacija\home.html:35
+msgid "Netaknuta priroda"
+msgstr "Untouched nature"
+
+#: .\aplikacija\templates\aplikacija\home.html:36
+msgid ""
+"Probudite se uz cvrkut ptica i svjež planinski zrak. Idealno za planinarenje "
+"i opuštanje."
+msgstr ""
+"Wake up to the chirping of birds and fresh mountain air. Ideal for hiking "
+"and relaxation."
+
+#: .\aplikacija\templates\aplikacija\home.html:41
+#: .\aplikacija\templates\aplikacija\home.html:74
+msgid "Privatni bazen"
+msgstr "Private pool"
+
+#: .\aplikacija\templates\aplikacija\home.html:42
+msgid ""
+"Uživajte u vlastitom grijanom bazenu s pogledom na šumu, savršenom za ljetne "
+"i zimske dane."
+msgstr ""
+"Enjoy your own heated pool overlooking the forest, perfect for summer and "
+"winter days."
+
+#: .\aplikacija\templates\aplikacija\home.html:47
+msgid "Vrhunski komfor"
+msgstr "Ultimate comfort"
+
+#: .\aplikacija\templates\aplikacija\home.html:48
+msgid ""
+"Prostrani dnevni boravak s kaminom, moderna kuhinja i luksuzno opremljene "
+"spavaće sobe."
+msgstr ""
+"Spacious living room with a fireplace, modern kitchen, and luxuriously "
+"equipped bedrooms."
+
+#: .\aplikacija\templates\aplikacija\home.html:55
+msgid "NAŠE USLUGE"
+msgstr "OUR SERVICES"
+
+#: .\aplikacija\templates\aplikacija\home.html:56
+msgid "Sadržaji Vile"
+msgstr "Villa Amenities"
+
+#: .\aplikacija\templates\aplikacija\home.html:62
+msgid "3 Spavaće sobe"
+msgstr "3 Bedrooms"
+
+#: .\aplikacija\templates\aplikacija\home.html:63
+msgid ""
+"Prostrane i luksuzno opremljene sobe koje osiguravaju savršen san i "
+"privatnost za sve naše goste."
+msgstr ""
+"Spacious and luxuriously equipped rooms ensuring perfect sleep and privacy "
+"for all our guests."
+
+#: .\aplikacija\templates\aplikacija\home.html:68
+msgid "2 Kupaonice"
+msgstr "2 Bathrooms"
+
+#: .\aplikacija\templates\aplikacija\home.html:69
+msgid ""
+"Moderne kupaonice s vrhunskom kozmetikom, prostranim tuševima i svim "
+"potrebnim dodacima za vaš komfor."
+msgstr ""
+"Modern bathrooms with premium cosmetics, spacious showers, and all necessary "
+"accessories for your comfort."
+
+#: .\aplikacija\templates\aplikacija\home.html:75
+msgid ""
+"Uživajte u vlastitom grijanom bazenu dostupnom samo vama, idealnom za "
+"opuštanje u svako doba dana."
+msgstr ""
+"Enjoy your own heated pool available only to you, ideal for relaxing at any "
+"time of the day."
+
+#: .\aplikacija\templates\aplikacija\home.html:80
+msgid "Kuhinja i ostava"
+msgstr "Kitchen and pantry"
+
+#: .\aplikacija\templates\aplikacija\home.html:81
+msgid ""
+"Potpuno opremljena moderna kuhinja sa svim aparatima i prostranom ostavom za "
+"vaše namirnice."
+msgstr ""
+"Fully equipped modern kitchen with all appliances and a spacious pantry for "
+"your groceries."
+
+#: .\aplikacija\templates\aplikacija\home.html:86
+msgid "Pečenjara"
+msgstr "Barbecue area"
+
+#: .\aplikacija\templates\aplikacija\home.html:87
+msgid ""
+"Tradicionalni vanjski kamin i natkriveni prostor za roštiljanje, savršen za "
+"večernja druženja uz vatru."
+msgstr ""
+"Traditional outdoor fireplace and a covered barbecue area, perfect for "
+"evening gatherings by the fire."
+
+#: .\aplikacija\templates\aplikacija\home.html:92
+msgid "Besplatan WiFi"
+msgstr "Free WiFi"
+
+#: .\aplikacija\templates\aplikacija\home.html:93
+msgid ""
+"Brzi i stabilni internet pokriva cijeli objekt, tako da uvijek možete ostati "
+"povezani sa svijetom."
+msgstr ""
+"Fast and stable internet covers the entire property, so you can always stay "
+"connected with the world."
+
+#: .\aplikacija\templates\aplikacija\home.html:102
+msgid "Pronađite nas"
+msgstr "Find us"
+
+#: .\aplikacija\templates\aplikacija\home.html:103
+msgid ""
+"Naša oaza nalazi se u srcu prirode. Kliknite na mapu za točne upute do "
+"Gorske Vile Crna Stina."
+msgstr ""
+"Our oasis is located in the heart of nature. Click on the map for exact "
+"directions to Mountain Villa Crna Stina."
+
+#: .\aplikacija\templates\aplikacija\home.html:108
+msgid "📍 Otvori u Google Maps"
+msgstr "📍 Open in Google Maps"
+
+# --- KUĆNI RED ---
+#: .\aplikacija\templates\aplikacija\kucnired.html:3
+msgid "Kućni red - Gorska Vila Crna Stina"
+msgstr "House Rules - Mountain Villa Crna Stina"
+
+#: .\aplikacija\templates\aplikacija\kucnired.html:14
+msgid "Kućni red"
+msgstr "House Rules"
+
+#: .\aplikacija\templates\aplikacija\kucnired.html:15
+msgid ""
+"Kako bi vaš boravak bio što ugodniji, molimo vas da se pridržavate sljedećih "
+"pravila."
+msgstr ""
+"To make your stay as pleasant as possible, please adhere to the following "
+"rules."
+
+#: .\aplikacija\templates\aplikacija\kucnired.html:22
+msgid "Prijava i Odjava"
+msgstr "Check-in and Check-out"
+
+#: .\aplikacija\templates\aplikacija\kucnired.html:23
+msgid ""
+"Prijava (Check-in) je moguća od <strong>15:00 sati</strong>. Molimo vas da "
+"vilu napustite (Check-out) do <strong>10:00 sati</strong> na dan odlaska "
+"kako bismo je stigli pripremiti za iduće goste."
+msgstr ""
+"Check-in is possible from <strong>3:00 PM</strong>. Please vacate the villa "
+"(Check-out) by <strong>10:00 AM</strong> on the day of departure so we can "
+"prepare it for the next guests."
+
+#: .\aplikacija\templates\aplikacija\kucnired.html:30
+msgid "Zabranjeno pušenje"
+msgstr "No Smoking"
+
+#: .\aplikacija\templates\aplikacija\kucnired.html:31
+msgid ""
+"Pušenje unutar vile je <strong>strogo zabranjeno</strong>. Dozvoljeno je "
+"isključivo na vanjskim terasama i u dvorištu. Molimo koristite pepeljare."
+msgstr ""
+"Smoking inside the villa is <strong>strictly prohibited</strong>. It is only "
+"allowed on the outdoor terraces and in the yard. Please use ashtrays."
+
+#: .\aplikacija\templates\aplikacija\kucnired.html:38
+msgid "Mir i tišina"
+msgstr "Peace and Quiet"
+
+#: .\aplikacija\templates\aplikacija\kucnired.html:39
+msgid ""
+"Vila se nalazi u mirnom okruženju. Molimo vas da poštujete noćni mir i "
+"izbjegavate glasnu glazbu ili buku na otvorenom nakon <strong>22:00 sata</"
+"strong>."
+msgstr ""
+"The villa is located in a quiet environment. Please respect the night's "
+"peace and avoid loud music or noise outdoors after <strong>10:00 PM</strong>."
+
+#: .\aplikacija\templates\aplikacija\kucnired.html:46
+msgid "Kućni ljubimci"
+msgstr "Pets"
+
+#: .\aplikacija\templates\aplikacija\kucnired.html:47
+msgid ""
+"Boravak kućnih ljubimaca moguć je isključivo uz <strong>prethodni upit i "
+"odobrenje</strong> domaćina. Moguća je nadoplata za čišćenje."
+msgstr ""
+"Pets are allowed only with <strong>prior request and approval</strong> from "
+"the host. An additional cleaning fee may apply."
+
+#: .\aplikacija\templates\aplikacija\kucnired.html:54
+msgid "Zabave i događaji"
+msgstr "Parties and Events"
+
+#: .\aplikacija\templates\aplikacija\kucnired.html:55
+msgid ""
+"Organizacija momačkih, djevojačkih večeri i sličnih velikih zabava nije "
+"dozvoljena bez izričitog prethodnog dogovora s vlasnikom."
+msgstr ""
+"Organizing bachelor, bachelorette parties, and similar large events is not "
+"allowed without explicit prior agreement with the owner."
+
+#: .\aplikacija\templates\aplikacija\kucnired.html:62
+msgid "Očuvanje imovine"
+msgstr "Property Preservation"
+
+#: .\aplikacija\templates\aplikacija\kucnired.html:63
+msgid ""
+"Gosti su odgovorni za svu štetu nastalu u vili ili na posjedu tijekom "
+"boravka. Svaku štetu potrebno je odmah prijaviti domaćinu."
+msgstr ""
+"Guests are responsible for any damage caused in the villa or on the property "
+"during their stay. Any damage must be reported immediately to the host."
+
+# --- O NAMA ---
+#: .\aplikacija\templates\aplikacija\onama.html:3
+msgid "O nama - Gorska Vila Crna Stina"
+msgstr "About Us - Mountain Villa Crna Stina"
+
+#: .\aplikacija\templates\aplikacija\onama.html:15
+msgid "NAŠA PRIČA"
+msgstr "OUR STORY"
+
+#: .\aplikacija\templates\aplikacija\onama.html:16
+msgid "Dobrodošli u Crnu Stinu"
+msgstr "Welcome to Crna Stina"
+
+#: .\aplikacija\templates\aplikacija\onama.html:20
+msgid ""
+"Gorska Vila Crna Stina nastala je iz čiste ljubavi prema netaknutoj prirodi "
+"i želje da stvorimo savršeno utočište za bijeg od ubrzanog svakodnevnog "
+"života."
+msgstr ""
+"Mountain Villa Crna Stina was born out of pure love for untouched nature and "
+"the desire to create the perfect sanctuary for escaping the busy pace of "
+"everyday life."
+
+#: .\aplikacija\templates\aplikacija\onama.html:23
+msgid ""
+"Naša vizija bila je spojiti vrhunski, moderni luksuz s tradicionalnim "
+"planinskim ambijentom. Svaki detalj u vili, od masivnog drveta do modernih "
+"staklenih stijena, pažljivo je biran kako bi se savršeno uklopio u okoliš."
+msgstr ""
+"Our vision was to combine premium, modern luxury with a traditional mountain "
+"ambiance. Every detail in the villa, from the solid wood to the modern glass "
+"walls, has been carefully chosen to blend perfectly with the environment."
+
+#: .\aplikacija\templates\aplikacija\onama.html:26
+msgid ""
+"Bilo da tražite mirnu oazu za opuštanje uz kamin ili bazu za aktivni odmor u "
+"prirodi, naš cilj je da se ovdje osjećate kao kod kuće, ali s dozom "
+"ekskluzivnosti koju zaslužujete."
+msgstr ""
+"Whether you are looking for a peaceful oasis to relax by the fireplace or a "
+"base for an active holiday in nature, our goal is to make you feel at home, "
+"but with the touch of exclusivity you deserve."
+
+#: .\aplikacija\templates\aplikacija\onama.html:32
+#, python-format
+msgid "100%% Priroda"
+msgstr "100%% Nature"
+
+#: .\aplikacija\templates\aplikacija\onama.html:36
+msgid "5 Zvjezdica"
+msgstr "5 Stars"
+
+#: .\aplikacija\templates\aplikacija\onama.html:40
+msgid "Privatnost"
+msgstr "Privacy"
+
+#: .\aplikacija\templates\aplikacija\onama.html:47
+msgid "O nama - Vila Crna Stina"
+msgstr "About Us - Villa Crna Stina"
+
+# --- OSNOVE ---
+#: .\crnastina\settings.py:118
+msgid "Hrvatski"
+msgstr "Croatian"
+
+#: .\crnastina\settings.py:119
+msgid "English"
+msgstr "English"
+
+# --- NAVBAR & FOOTER ---
+#: .\templates\base.html:32
+msgid "POČETNA"
+msgstr "HOME"
+
+#: .\templates\base.html:33
+msgid "O NAMA"
+msgstr "ABOUT US"
+
+#: .\templates\base.html:34
+msgid "GALERIJA"
+msgstr "GALLERY"
+
+#: .\templates\base.html:35
+msgid "KUĆNI RED"
+msgstr "HOUSE RULES"
+
+#: .\templates\base.html:36
+msgid "REZERVIRAJ"
+msgstr "BOOK NOW"
+
+#: .\templates\base.html:54
+msgid "Moj Profil"
+msgstr "My Profile"
+
+#: .\templates\base.html:65
+msgid "ODJAVI SE"
+msgstr "LOG OUT"
+
+#: .\templates\base.html:70
+msgid "PRIJAVI SE"
+msgstr "LOG IN"
+
+#: .\templates\base.html:73
+msgid "REGISTRIRAJ SE"
+msgstr "REGISTER"
+
+#: .\templates\base.html:89
+msgid ""
+"Dobrodošli u vašu privatnu oazu mira. Mjesto gdje se beskompromisni luksuz "
+"susreće s netaknutom divljinom, stvarajući uspomene koje traju vječno. "
+"Pobjegnite od svakodnevice i prepustite se čaroliji planine."
+msgstr ""
+"Welcome to your private oasis of peace. A place where uncompromising luxury "
+"meets untouched wilderness, creating memories that last forever. Escape from "
+"the everyday and surrender to the magic of the mountain."
+
+#: .\templates\base.html:94
+msgid "Brzi Linkovi"
+msgstr "Quick Links"
+
+#: .\templates\base.html:96
+msgid "Početna"
+msgstr "Home"
+
+#: .\templates\base.html:97
+msgid "O Nama"
+msgstr "About Us"
+
+#: .\templates\base.html:99
+msgid "Kućni Red"
+msgstr "House Rules"
+
+#: .\templates\base.html:100
+msgid "Rezervacije"
+msgstr "Reservations"
+
+#: .\templates\base.html:105
+msgid "Kontaktirajte Nas"
+msgstr "Contact Us"
+
+#: .\templates\base.html:107
+msgid "Crna Stina bb, Livno, BiH"
+msgstr "Crna Stina bb, Livno, B&H"
+
+#: .\templates\base.html:124
+msgid "Sva prava pridržana."
+msgstr "All rights reserved."
+
+# --- PROFIL (PROFIL.HTML) ---
+msgid "Ažurirajte svoje osobne podatke."
+msgstr "Update your personal details."
+
+msgid "Ime:"
+msgstr "First Name:"
+
+msgid "Prezime:"
+msgstr "Last Name:"
+
+msgid "Email adresa:"
+msgstr "Email address:"
+
+msgid "SPREMI IZMJENE"
+msgstr "SAVE CHANGES"
+
+msgid "Moje Rezervacije"
+msgstr "My Reservations"
+
+msgid "Pregled i otkazivanje vaših termina."
+msgstr "View and cancel your appointments."
+
+msgid "Dolazak:"
+msgstr "Check-in:"
+
+msgid "Odlazak:"
+msgstr "Check-out:"
+
+msgid "Jeste li sigurni da želite otkazati ovu rezervaciju?"
+msgstr "Are you sure you want to cancel this reservation?"
+
+msgid "OTKAŽI"
+msgstr "CANCEL"
+
+msgid "Trenutno nemate aktivnih rezervacija."
+msgstr "You currently have no active reservations."
+
+# --- LOGIN I REGISTRACIJA ---
+msgid "Prijava"
+msgstr "Login"
+
+msgid "Korisničko ime"
+msgstr "Username"
+
+msgid "Lozinka"
+msgstr "Password"
+
+msgid "Prijavi se"
+msgstr "Log In"
+
+msgid "Ako nisi prijavljen,"
+msgstr "If you don't have an account,"
+
+msgid "registriraj se ovdje"
+msgstr "register here"
+
+msgid "Registracija"
+msgstr "Registration"
+
+msgid "Registriraj se"
+msgstr "Register"
+
+msgid "Već imaš račun?"
+msgstr "Already have an account?"
+
+# --- PROMJENA LOZINKE ---
+msgid "PROMIJENI LOZINKU"
+msgstr "CHANGE PASSWORD"
+
+msgid "Promjena lozinke"
+msgstr "Change Password"
+
+msgid "Unesite staru lozinku, a zatim dvaput novu."
+msgstr "Enter your old password, then the new one twice."
+
+msgid "SPREMI LOZINKU"
+msgstr "SAVE PASSWORD"
+
+msgid "Nazad na profil"
+msgstr "Back to profile"
+
+# --- ATRAKCIJE I RESET LOZINKE ---
+msgid "Istražite okolicu"
+msgstr "Explore the surroundings"
+
+msgid "Livno i okolica nude nezaboravne avanture. Otkrijte ljepote koje vas okružuju."
+msgstr "Livno and its surroundings offer unforgettable adventures. Discover the beauty around you."
+
+msgid "Divlji konji na Kruzima"
+msgstr "Wild Horses on Kruzi"
+
+msgid "Doživite susret s preko 800 divljih konja koji slobodno lutaju nepreglednim prostranstvima planine Cincar."
+msgstr "Experience an encounter with over 800 wild horses roaming freely across the vast expanses of Mount Cincar."
+
+msgid "Buško jezero"
+msgstr "Busko Lake"
+
+msgid "Jedno od najvećih umjetnih jezera u Europi, idealno za kupanje, ribolov i opuštajuće šetnje."
+msgstr "One of the largest artificial lakes in Europe, ideal for swimming, fishing, and relaxing walks."
+
+msgid "Planinarenje i priroda"
+msgstr "Hiking and Nature"
+
+msgid "Otkrijte skrivene staze, uživajte u pogledu s planinskih vrhova i udahnite čisti zrak."
+msgstr "Discover hidden trails, enjoy the view from mountain peaks, and breathe in the fresh air."
+
+msgid "Zaboravili ste lozinku?"
+msgstr "Forgot your password?"
+
+msgid "Reset lozinke"
+msgstr "Password Reset"
+
+msgid "Unesite svoju email adresu i poslat ćemo vam upute."
+msgstr "Enter your email address and we will send you instructions."
+
+msgid "POŠALJI EMAIL"
+msgstr "SEND EMAIL"
+
+msgid "Email je poslan!"
+msgstr "Email sent!"
+
+msgid "Provjerite svoj inbox (i Spam mapu). Poslali smo vam link za resetiranje."
+msgstr "Check your inbox (and Spam folder). We have sent you a reset link."
+
+msgid "Nova lozinka"
+msgstr "New Password"
+
+msgid "Uspješno!"
+msgstr "Success!"
+
+msgid "Lozinka je promijenjena. Sada se možete prijaviti."
+msgstr "Password changed. You can now log in."
+
+# --- RECENZIJE GOSTIJU ---
+msgid "Riječ naših gostiju"
+msgstr "What Our Guests Say"
+
+msgid "Nevjerojatno iskustvo! Vila uživo izgleda još bolje nego na slikama. Mir, tišina i beskompromisni luksuz."
+msgstr "An incredible experience! The villa looks even better in person than in the pictures. Peace, quiet, and uncompromising luxury."
+
+msgid "Hrvatska"
+msgstr "Croatia"
+
+msgid "Savršen bijeg od stresa. Bazen je fantastičan, a buđenje uz pogled na prirodu je neprocjenjivo. Vraćamo se opet!"
+msgstr "A perfect escape from stress. The pool is fantastic, and waking up to the view of nature is priceless. We will be coming back!"
+
+msgid "Velika Britanija"
+msgstr "United Kingdom"
+
+msgid "Domaćini su mislili na apsolutno svaki detalj. Sve je besprijekorno čisto, a večernja atmosfera uz kamin je magična."
+msgstr "The hosts thought of absolutely every detail. Everything is spotlessly clean, and the evening atmosphere by the fireplace is magical."
+
+msgid "Njemačka"
+msgstr "Germany"
+
+msgid "Pozdrav,"
+msgstr "Hello,"
+
+msgid "Korisnik s ovom email adresom već postoji."
+msgstr "A user with this email address already exists."

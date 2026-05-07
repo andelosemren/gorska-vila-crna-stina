@@ -1,0 +1,157 @@
+{% load static %}
+{% load i18n %}
+<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}">
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Gorska Vila Crna Stina{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'base.css' %}" />
+    {% block css_files %}{% endblock css_files %}
+
+    <style>
+      /* --- STIL ZA ZASTAVICE --- */
+      .language-switcher-li {
+        list-style: none;
+        display: flex;
+        align-items: center;
+      }
+      .language-form {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin: 0;
+      }
+      .flag-btn {
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        cursor: pointer;
+        opacity: 0.6;
+        transition: 0.3s;
+        display: flex;
+        align-items: center;
+      }
+      .flag-btn:hover,
+      .flag-btn.active {
+        opacity: 1;
+        transform: scale(1.1);
+      }
+      .flag-icon {
+        width: 28px !important;
+        height: 18px !important;
+        object-fit: cover !important;
+        border-radius: 2px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="navbar">
+      <div class="logo">
+        <a href="{% url 'pocetna' %}">
+          <img src="{% static 'aplikacija/slike/logoslika.png' %}" alt="GORSKA VILA CRNA STINA" />
+        </a>
+      </div>
+
+      <div class="hamburger" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <nav>
+        <ul class="nav-links" id="nav-list">
+          <li><a href="{% url 'pocetna' %}">{% trans "POČETNA" %}</a></li>
+          <li><a href="{% url 'onama' %}">{% trans "O NAMA" %}</a></li>
+          <li><a href="{% url 'galerija' %}">{% trans "GALERIJA" %}</a></li>
+          <li><a href="{% url 'kucnired' %}">{% trans "KUĆNI RED" %}</a></li>
+          <li><a href="{% url 'booking' %}">{% trans "REZERVIRAJ" %}</a></li>
+
+          <li class="language-switcher-li">
+            <form action="{% url 'set_language' %}" method="post" class="language-form">
+              {% csrf_token %}
+              <input name="next" type="hidden" value="{{ request.path }}" />
+              <button type="submit" name="language" value="hr" class="flag-btn {% if LANGUAGE_CODE == 'hr' %}active{% endif %}" title="Hrvatski">
+                <img src="https://flagcdn.com/w40/hr.png" alt="HR" class="flag-icon" />
+              </button>
+              <button type="submit" name="language" value="en" class="flag-btn {% if LANGUAGE_CODE == 'en' %}active{% endif %}" title="English">
+                <img src="https://flagcdn.com/w40/gb.png" alt="EN" class="flag-icon" />
+              </button>
+            </form>
+          </li>
+
+          {% if user.is_authenticated %}
+          <li>
+            <a href="/profil" class="profile-icon-link" title="{% trans 'Moj Profil' %}" style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="user-svg" width="26" height="26">
+                <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20.5901 22C20.5901 18.13 16.7401 15 12.0001 15C7.2601 15 3.4101 18.13 3.4101 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span style="font-size: 10px; color: #f0c27b; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap;">
+                {% trans "Pozdrav," %} {{ user.username }}
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            <form action="{% url 'logout' %}" method="post" style="display: block; text-align: center;">
+              {% csrf_token %}
+              <button type="submit" class="nav-logout-btn" style="margin: 0 auto;">{% trans "ODJAVI SE" %}</button>
+            </form>
+          </li>
+          
+          {% else %}
+          
+          <li><a href="{% url 'login' %}" class="nav-btn-outline">{% trans "PRIJAVI SE" %}</a></li>
+          <li><a href="{% url 'register' %}" class="nav-btn-filled">{% trans "REGISTRIRAJ SE" %}</a></li>
+          
+          {% endif %}
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main-content">{% block content %}{% endblock content %}</main>
+
+    <footer class="site-footer-simple">
+      <div class="footer-simple-content">
+        
+        <a href="{% url 'pocetna' %}" class="footer-logo">
+          <img src="{% static 'aplikacija/slike/logoslika.png' %}" alt="Gorska Vila Crna Stina" />
+        </a>
+
+        <div class="footer-nav">
+          <a href="{% url 'pocetna' %}">{% trans "POČETNA" %}</a>
+          <a href="{% url 'onama' %}">{% trans "O NAMA" %}</a>
+          <a href="{% url 'galerija' %}">{% trans "GALERIJA" %}</a>
+          <a href="{% url 'kucnired' %}">{% trans "KUĆNI RED" %}</a>
+          <a href="{% url 'booking' %}">{% trans "REZERVIRAJ" %}</a>
+        </div>
+
+        <div class="footer-contact-inline">
+          <p><i class="fas fa-envelope"></i> luxurycrnastina@gmail.com &nbsp;&nbsp;|&nbsp;&nbsp; <i class="fas fa-phone"></i> +387 63 290 757</p>
+        </div>
+
+        <div class="footer-social-simple">
+          <a href="https://www.instagram.com/crnastina/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+
+      </div>
+      
+      <div class="footer-bottom-simple">
+        <p>&copy; 2026 Gorska Vila Crna Stina. {% trans "Sva prava pridržana." %}</p>
+      </div>
+    </footer>
+    <script>
+      const menu = document.getElementById("mobile-menu");
+      const navList = document.getElementById("nav-list");
+
+      menu.onclick = () => {
+        navList.classList.toggle("active");
+        const icon = menu.querySelector("i");
+        icon.classList.toggle("fa-bars");
+        icon.classList.toggle("fa-times");
+      };
+    </script>
+  </body>
+</html>

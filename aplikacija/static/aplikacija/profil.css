@@ -1,0 +1,110 @@
+/* =========================================
+   PROFIL STRANICA (Lux-Dark Tema)
+   ========================================= */
+
+/* Centralizacija i pozadina cijele sekcije */
+.profile-section {
+    display: flex;
+    flex-direction: row; /* OVO IH STAVLJA JEDNO PORED DRUGOG */
+    justify-content: center;
+    align-items: flex-start; /* Poravnava obje kutije po gornjem rubu */
+    flex-wrap: wrap; /* Ako netko gleda preko mobitela, automatski će ih složiti jedno ispod drugog */
+    gap: 40px; /* Razmak između lijeve i desne kutije */
+    min-height: 80vh;
+    background-color: #0d1117;
+    color: white;
+    padding: 120px 20px 50px;
+}
+
+/* Da kutije ne budu preširoke kad su jedna pored druge */
+.profile-container {
+    flex: 1; /* Obje kutije uzimaju jednak prostor */
+    min-width: 350px; /* Neće se previše stisnuti */
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 40px;
+    border: 1px solid rgba(206, 156, 107, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Naslov "Moj Profil" - Zlatni/Brončani */
+.profile-container h2 {
+    color: #ce9c6b; /* Bronze boja iz footera cite: 25 */
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+/* Podnaslov - Sivi */
+.profile-container p {
+    color: #aaa;
+    font-size: 15px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+/* Poravnanje forme ulijevo */
+.profile-form {
+    text-align: left;
+}
+
+/* Veći razmak između input grupa cytcite: 27 */
+.form-group {
+    margin-bottom: 25px;
+}
+
+/* Labela iznad inputa */
+.form-group label {
+    display: block;
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+/* === LUKSUZNI INPUTI === */
+/* Svi inputi su crni sa zlatnim obrubom cytcite: 17, 27 */
+.form-control {
+    width: 100%;
+    padding: 15px;
+    background: #06080b; /* Cite: 25 */
+    border: 1px solid rgba(206, 156, 107, 0.3); /* Bronze cytcite: 25 */
+    color: white;
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Transitions cytcite: 17 */
+    font-size: 14px;
+}
+
+/* Efekt kad se klikne u input */
+.form-control:focus {
+    border-color: #f0c27b; /* Jače zlato cytcite: 17 */
+    outline: none;
+    box-shadow: 0 0 10px rgba(240, 194, 123, 0.2); /* Sjaj cytcite: 17 */
+}
+
+/* === LUKSUZNI "HERO GUMB" (Totalni redizajn) === */
+/* Ovo će ukloniti onaj flat bijeli default izgled cite: 27 */
+.profile-submit {
+    width: 100%;
+    margin-top: 30px;
+    background: transparent; /* Uklanjamo flat bijelu cytcite: 27 */
+    border: 1px solid #ce9c6b; /* Bronze obrub cytcite: 25 */
+    color: #ce9c6b;
+    padding: 16px 40px; /* Cytcite: 17 */
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.4s ease; /* Cytcite: 17 */
+    font-weight: 600;
+}
+
+/* Hover efekt - Gumb se "napuni" broncom cytcite: 17 */
+.profile-submit:hover {
+    background: #ce9c6b; /* Puni se bronze bojom */
+    color: #06080b; /* Tekst postaje taman cytcite: 17 */
+    transform: translateY(-3px); /* Lagano dizanje gumba cytcite: 17 */
+    box-shadow: 0 10px 20px rgba(206, 156, 107, 0.3); /* Meki odsjaj cytcite: 17 */
+}

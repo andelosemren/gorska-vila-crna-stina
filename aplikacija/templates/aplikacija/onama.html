@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %} {% block title %}{% trans "O nama - Gorska Vila Crna Stina" %}{% endblock title %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'aplikacija/onama.css' %}">
+{% endblock css_files %}
+
+{% block content %}
+<div class="about-page">
+    <div class="about-container">
+        
+        <div class="about-grid">
+            <div class="about-content">
+                <span class="about-subtitle">{% trans "NAŠA PRIČA" %}</span>
+                <h1>{% trans "Dobrodošli u Crnu Stinu" %}</h1>
+                <div class="title-line"></div>
+                
+                <p>
+                    {% blocktrans %}Gorska Vila Crna Stina nastala je iz čiste ljubavi prema netaknutoj prirodi i želje da stvorimo savršeno utočište za bijeg od ubrzanog svakodnevnog života.{% endblocktrans %}
+                </p>
+                <p>
+                    {% blocktrans %}Naša vizija bila je spojiti vrhunski, moderni luksuz s tradicionalnim planinskim ambijentom. Svaki detalj u vili, od masivnog drveta do modernih staklenih stijena, pažljivo je biran kako bi se savršeno uklopio u okoliš.{% endblocktrans %}
+                </p>
+                <p>
+                    {% blocktrans %}Bilo da tražite mirnu oazu za opuštanje uz kamin ili bazu za aktivni odmor u prirodi, naš cilj je da se ovdje osjećate kao kod kuće, ali s dozom ekskluzivnosti koju zaslužujete.{% endblocktrans %}
+                </p>
+                
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-tree"></i>
+                        <span>{% trans "100% Priroda" %}</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-star"></i>
+                        <span>{% trans "5 Zvjezdica" %}</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>{% trans "Privatnost" %}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-image-wrapper">
+                <div class="image-frame">
+                    <img src="{% static 'aplikacija/slike/image.png' %}" alt="{% trans 'O nama - Vila Crna Stina' %}">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load i18n %} {% block content %}
+<div class="auth-container">
+    <div class="auth-card">
+        <h1>{% trans "Registracija" %}</h1>  
+        <form action="" method="post">
+            {% csrf_token %}
+            
+            {% for field in form %}
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                
+                {% if field.errors %}
+                    {% for error in field.errors %}
+                        <p class="error-msg">{{ error|escape }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+            
+            {% if form.non_field_errors %}
+                {% for error in form.non_field_errors %}
+                    <p class="error-msg">{{ error|escape }}</p>
+                {% endfor %}
+            {% endif %}
+            
+            <input type="submit" value="{% trans 'Registriraj se' %}">
+        </form>
+        
+        <p>{% trans "Već imaš račun?" %} <a href="{% url 'login' %}">{% trans "Prijavi se" %}</a>.</p>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<div class="auth-container"><div class="auth-card">
+    <i class="fas fa-check-circle" style="font-size: 50px; color: #4CAF50; margin-bottom: 20px;"></i>
+    <h1 style="font-size: 20px;">{% trans "Uspješno!" %}</h1>
+    <p style="color: #aaa; font-size: 14px;">{% trans "Lozinka je promijenjena. Sada se možete prijaviti." %}</p>
+    <a href="{% url 'login' %}" class="nav-btn-filled" style="margin-top: 20px;">{% trans "PRIJAVI SE" %}</a>
+</div></div>
+{% endblock %}

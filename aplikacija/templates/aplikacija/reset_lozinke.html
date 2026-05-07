@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<div class="auth-container"><div class="auth-card">
+    <h1>{% trans "Reset lozinke" %}</h1>
+    <p style="color: #aaa; font-size: 14px; margin-bottom: 20px;">{% trans "Unesite svoju email adresu i poslat ćemo vam upute." %}</p>
+    <form method="post">{% csrf_token %}
+        {{ form }}
+        <input type="submit" value="{% trans 'POŠALJI EMAIL' %}" style="margin-top: 15px;">
+    </form>
+</div></div>
+{% endblock %}

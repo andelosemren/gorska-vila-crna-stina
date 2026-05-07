@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<div class="auth-container"><div class="auth-card">
+    <i class="fas fa-paper-plane" style="font-size: 50px; color: #f0c27b; margin-bottom: 20px;"></i>
+    <h1 style="font-size: 20px;">{% trans "Email je poslan!" %}</h1>
+    <p style="color: #aaa; font-size: 14px;">{% trans "Provjerite svoj inbox (i Spam mapu). Poslali smo vam link za resetiranje." %}</p>
+</div></div>
+{% endblock %}

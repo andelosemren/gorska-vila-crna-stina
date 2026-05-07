@@ -1,0 +1,57 @@
+.gallery-page {
+  background-color: transparent;
+  padding: 60px 20px 100px 20px;
+}
+
+.gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  aspect-ratio: 4 / 3;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* Tamni filter preko slike koji pojačava luksuz */
+.gallery-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: background 0.6s ease;
+
+  /* OVO JE KLJUČNO: Dopušta da klik "prođe" kroz tamni filter do linka ispod! */
+  pointer-events: none;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-item:hover::after {
+  background: rgba(0, 0, 0, 0.1);
+}
+/* NOVO: Tjeramo link da popuni cijeli prostor kockice */
+.gallery-item a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

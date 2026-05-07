@@ -1,0 +1,114 @@
+{% extends "base.html" %} 
+{% load static %}
+{% load i18n %} {% block css_files %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+<link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css" />
+<style>
+    span.flatpickr-day.flatpickr-disabled,
+    span.flatpickr-day.flatpickr-disabled:hover {
+        background-color: rgba(255, 50, 50, 0.1) !important;
+        color: #ff4a4a !important;
+        border-color: transparent !important;
+    }
+</style>
+{% endblock css_files %} 
+
+{% block content %}
+<div class="auth-container">
+  <div class="auth-card" style="max-width: 600px">
+    <h1>{% trans "Rezervacija vile" %}</h1>
+
+    {% for message in messages %}
+    <p class="error-msg" style="text-align: center; font-size: 15px; {% if message.tags == 'success' %}color: #4CAF50;{% endif %}">
+      {{ message }}
+    </p>
+    {% endfor %}
+
+    <form method="post" id="booking_form">
+      {% csrf_token %}
+
+<label for="phone_number">{% trans "Broj mobitela:" %}</label>
+<input 
+    type="tel" 
+    name="phone_number" 
+    id="phone_number" 
+    placeholder="{% trans 'Npr. +387 63 123 456' %}" 
+    maxlength="17" 
+    minlength="6"
+    oninput="this.value = this.value.replace(/[^0-9+\s]/g, '')"
+    required 
+/>
+
+      <label for="date_range">{% trans "Odaberite datume (Dolazak - Odlazak):" %}</label>
+      <input type="text" id="date_range" placeholder="{% trans 'Klikni za odabir termina...' %}" readonly required />
+
+      <input type="hidden" name="start_date" id="start_date" />
+      <input type="hidden" name="end_date" id="end_date" />
+
+      <div style="text-align: left; margin-bottom: 25px; background: rgba(0, 0, 0, 0.3); padding: 15px; border-radius: 8px;">
+        <p style="color: #aaa; font-size: 12px; margin-bottom: 10px">
+          {% trans "CJENIK PO NOĆENJU:" %}
+        </p>
+        <ul style="color: #ddd; font-size: 13px; list-style: none">
+          <li>{% trans "1 - 2 noći:" %} <strong>500 €</strong></li>
+          <li>{% trans "3 - 4 noći:" %} <strong>300 €</strong></li>
+          <li>{% trans "5 - 9 noći:" %} <strong>250 €</strong></li>
+          <li>{% trans "10+ noći:" %} <strong>200 €</strong></li>
+        </ul>
+        <p id="price_calculator" style="color: #f0c27b; font-weight: bold; margin-top: 15px; font-size: 18px; text-transform: uppercase;">
+          {% trans "UKUPNO: 0 €" %}
+        </p>
+      </div>
+
+      <input type="submit" value="{% trans 'POTVRDI REZERVACIJU' %}" />
+    </form>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<script>
+  const zauzetiDatumi = {{ zauzeti_datumi_json|safe }};
+
+  flatpickr("#date_range", {
+      mode: "range",
+      minDate: "today",
+      dateFormat: "Y-m-d",
+      disable: zauzetiDatumi,
+
+      onChange: function(selectedDates, dateStr, instance) {
+          if (selectedDates.length === 2) {
+              const startDate = flatpickr.formatDate(selectedDates[0], "Y-m-d");
+              const endDate = flatpickr.formatDate(selectedDates[1], "Y-m-d");
+
+              document.getElementById("start_date").value = startDate;
+              document.getElementById("end_date").value = endDate;
+
+              const diffTime = Math.abs(selectedDates[1] - selectedDates[0]);
+              const brojNoci = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+              let cijenaPoNoci = 0;
+              if (brojNoci >= 10) {
+                  cijenaPoNoci = 200;
+              } else if (brojNoci >= 5) {
+                  cijenaPoNoci = 250;
+              } else if (brojNoci >= 3) {
+                  cijenaPoNoci = 300;
+              } else {
+                  cijenaPoNoci = 500;
+              }
+
+              const ukupno = brojNoci * cijenaPoNoci;
+
+              // Prevodimo tekst iz JS-a
+              document.getElementById("price_calculator").innerText = `{% trans 'UKUPNO' %} (${brojNoci} {% trans 'NOĆI' %}): ${ukupno} €`;
+
+          } else {
+              document.getElementById("start_date").value = "";
+              document.getElementById("end_date").value = "";
+              document.getElementById("price_calculator").innerText = "{% trans 'UKUPNO: 0 €' %}";
+          }
+      }
+  });
+</script>
+{% endblock content %}

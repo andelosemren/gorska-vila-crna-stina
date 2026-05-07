@@ -1,0 +1,225 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% load i18n %} {% block title %}{% trans "Gorska Vila Crna Stina" %}{% endblock title %} 
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'aplikacija/home.css' %}" />
+{% endblock css_files %} 
+
+{% block content %}
+<section class="hero">
+  <div class="video-background">
+    <video autoplay muted loop playsinline>
+        <source src="{% static 'aplikacija/video/vila.mp4' %}" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="hero-content">
+    <span class="subtitle">{% trans "EKSKLUZIVNA LJEPOTA" %}</span>
+    <h1>{% trans "GORSKA VILA CRNA STINA" %}</h1>
+    <p>{% trans "Spoj luksuza i prirode" %}</p>
+    <a href="#sadrzaji" class="hero-btn">{% trans "OTKRIJTE SADRŽAJE" %}</a>
+  </div>
+</section>
+
+<section class="about-villa">
+    <div class="about-container">
+        <h2>{% trans "Oaza mira u srcu prirode" %}</h2>
+        <p class="about-text">
+            {% blocktrans %}Gorska Vila Crna Stina nudi savršen bijeg od užurbanog svakodnevnog života. Smještena na prekrasnoj lokaciji, naša luksuzna vila pruža vrhunski komfor, privatnost i sve što vam je potrebno za nezaboravan odmor.{% endblocktrans %}
+        </p>
+        
+        <div class="features-grid">
+    <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-mountain"></i></div>
+        <h3>{% trans "Netaknuta priroda" %}</h3>
+        <p>{% trans "Probudite se uz cvrkut ptica i svjež planinski zrak. Idealno za planinarenje i opuštanje." %}</p>
+    </div>
+    
+    <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-swimming-pool"></i></div>
+        <h3>{% trans "Privatni bazen" %}</h3>
+        <p>{% trans "Uživajte u vlastitom grijanom bazenu s pogledom na šumu, savršenom za ljetne i zimske dane." %}</p>
+    </div>
+    
+    <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-couch"></i></div>
+        <h3>{% trans "Vrhunski komfor" %}</h3>
+        <p>{% trans "Prostrani dnevni boravak s kaminom, moderna kuhinja i luksuzno opremljene spavaće sobe." %}</p>
+    </div>
+</div>
+
+    <section id="sadrzaji" class="amenities-section">
+    <div class="amenities-container">
+        <span class="amenities-subtitle">{% trans "NAŠE USLUGE" %}</span>
+        <h2>{% trans "Sadržaji Vile" %}</h2>
+        
+        <div class="amenities-grid">
+            
+    <div class="amenity-card">
+        <div class="amenity-icon"><i class="fas fa-bed"></i></div>
+        <h3>{% trans "3 Spavaće sobe" %}</h3>
+        <p>{% trans "Prostrane i luksuzno opremljene sobe koje osiguravaju savršen san i privatnost za sve naše goste." %}</p>
+    </div>
+    
+    <div class="amenity-card">
+        <div class="amenity-icon"><i class="fas fa-bath"></i></div>
+        <h3>{% trans "2 Kupaonice" %}</h3>
+        <p>{% trans "Moderne kupaonice s vrhunskom kozmetikom, prostranim tuševima i svim potrebnim dodacima." %}</p>
+    </div>
+
+    <div class="amenity-card">
+        <div class="amenity-icon"><i class="fas fa-swimmer"></i></div>
+        <h3>{% trans "Privatni bazen" %}</h3>
+        <p>{% trans "Uživajte u vlastitom grijanom bazenu dostupnom samo vama, idealnom za opuštanje." %}</p>
+    </div>
+
+    <div class="amenity-card">
+        <div class="amenity-icon"><i class="fas fa-utensils"></i></div>
+        <h3>{% trans "Kuhinja i ostava" %}</h3>
+        <p>{% trans "Potpuno opremljena moderna kuhinja sa svim aparatima za vaše kulinarske majstorije." %}</p>
+    </div>
+
+    <div class="amenity-card">
+        <div class="amenity-icon"><i class="fas fa-fire-alt"></i></div>
+        <h3>{% trans "Pečenjara" %}</h3>
+        <p>{% trans "Tradicionalni vanjski kamin za roštiljanje, savršen za večernja druženja uz vatru." %}</p>
+    </div>
+
+    <div class="amenity-card">
+        <div class="amenity-icon"><i class="fas fa-wifi"></i></div>
+        <h3>{% trans "Besplatan WiFi" %}</h3>
+        <p>{% trans "Brzi i stabilni internet pokriva cijeli objekt, tako da uvijek možete ostati povezani." %}</p>
+    </div>
+</div>
+    </div>
+</section>
+
+    <section class="location-section">
+    <div class="location-container">
+        <h2>{% trans "Pronađite nas" %}</h2>
+        <p class="location-text">{% trans "Naša oaza nalazi se u srcu prirode. Kliknite na mapu za točne upute do Gorske Vile Crna Stina." %}</p>
+
+        <a href="https://www.google.com/maps/place/Gorska+vila+CRNA+STINA/@43.7858291,16.9808609,687m/data=!3m1!1e3!4m6!3m5!1s0x475f8b0068cafb1b:0x784d510bff3a17ae!8m2!3d43.787577!4d16.9826753!16s%2Fg%2F11vwk6hv9w?entry=ttu&g_ep=EgoyMDI2MDMwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="map-wrapper">
+            
+            <div class="map-overlay">
+                <span>{% trans "📍 Otvori u Google Maps" %}</span>
+            </div>
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2989.525402622648!2d16.98086091224924!3d43.78582909093338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475f8b0068cafb1b%3A0x784d510bff3a17ae!2sGorska%20vila%20CRNA%20STINA!5e1!3m2!1shr!2sba!4v1772784366730!5m2!1shr!2sba" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            
+        </a>
+    </div>
+</section>
+<section class="about-villa" style="background-color: #0d1117; padding-top: 60px;">
+    <div class="about-container">
+        <h2 style="font-size: 32px; margin-bottom: 50px;">{% trans "Riječ naših gostiju" %}</h2>
+        
+        <div class="features-grid">
+            <div class="feature-card" style="padding: 40px 30px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div style="color: #f0c27b; font-size: 16px; margin-bottom: 20px; letter-spacing: 2px;">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p style="font-style: italic; color: #ccc; font-size: 16px; margin-bottom: 25px;">"{% trans "Nevjerojatno iskustvo! Vila uživo izgleda još bolje nego na slikama. Mir, tišina i beskompromisni luksuz." %}"</p>
+                </div>
+                <div>
+                    <h4 style="color: #fff; font-weight: 500; letter-spacing: 1px; font-size: 16px;">Marko & Ana</h4>
+                    <span style="color: #777; font-size: 13px;">{% trans "Hrvatska" %} 🇭🇷</span>
+                </div>
+            </div>
+
+            <div class="feature-card" style="padding: 40px 30px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div style="color: #f0c27b; font-size: 16px; margin-bottom: 20px; letter-spacing: 2px;">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p style="font-style: italic; color: #ccc; font-size: 16px; margin-bottom: 25px;">"{% trans "Savršen bijeg od stresa. Bazen je fantastičan, a buđenje uz pogled na prirodu je neprocjenjivo. Vraćamo se opet!" %}"</p>
+                </div>
+                <div>
+                    <h4 style="color: #fff; font-weight: 500; letter-spacing: 1px; font-size: 16px;">Michael</h4>
+                    <span style="color: #777; font-size: 13px;">{% trans "Velika Britanija" %} 🇬🇧</span>
+                </div>
+            </div>
+
+            <div class="feature-card" style="padding: 40px 30px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div style="color: #f0c27b; font-size: 16px; margin-bottom: 20px; letter-spacing: 2px;">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p style="font-style: italic; color: #ccc; font-size: 16px; margin-bottom: 25px;">"{% trans "Domaćini su mislili na apsolutno svaki detalj. Sve je besprijekorno čisto, a večernja atmosfera uz kamin je magična." %}"</p>
+                </div>
+                <div>
+                    <h4 style="color: #fff; font-weight: 500; letter-spacing: 1px; font-size: 16px;">Sarah & Thomas</h4>
+                    <span style="color: #777; font-size: 13px;">{% trans "Njemačka" %} 🇩🇪</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</section>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const cilj = document.querySelector(this.getAttribute('href'));
+      if (cilj) {
+        const ciljPozicija = cilj.getBoundingClientRect().top + window.pageYOffset - 80;
+        const startnaPozicija = window.pageYOffset;
+        const udaljenost = ciljPozicija - startnaPozicija;
+        
+        const trajanje = 1200; 
+        let start = null;
+
+        function animacija(trenutnoVrijeme) {
+          if (start === null) start = trenutnoVrijeme;
+          const napredak = trenutnoVrijeme - start;
+          
+          const postotak = Math.min(napredak / trajanje, 1);
+          const ease = postotak < 0.5 
+            ? 4 * postotak * postotak * postotak 
+            : 1 - Math.pow(-2 * postotak + 2, 3) / 2;
+
+          window.scrollTo(0, startnaPozicija + udaljenost * ease);
+
+          if (napredak < trajanje) {
+            requestAnimationFrame(animacija);
+          }
+        }
+
+        requestAnimationFrame(animacija);
+      }
+    });
+  });
+</script>
+<section class="about-villa" style="background-color: #05070a; border-top: 1px solid rgba(240, 194, 123, 0.1); border-bottom: 1px solid rgba(240, 194, 123, 0.1);">
+    <div class="about-container">
+        <h2>{% trans "Istražite okolicu" %}</h2>
+        <p class="about-text" style="margin-bottom: 50px;">
+            {% trans "Livno i visoravan Kruzi nude nezaboravne avanture. Otkrijte divlju prirotu i ljepote koje vas okružuju na samo korak od vile." %}
+        </p>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-horse-head"></i></div>
+                <h3>{% trans "Divlji konji na Kruzima" %}</h3>
+                <p>{% trans "Doživite nevjerojatan susret s preko 800 divljih konja koji desetljećima slobodno lutaju nepreglednim prostranstvima visoravni Kruzi." %}</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-binoculars"></i></div>
+                <h3>{% trans "Crna Stina" %}</h3>
+                <p>{% trans "Posjetite samu Crnu Stinu po kojoj je naša vila dobila ime. Uživajte u spektakularnom pogledu na livanjski kraj i netaknutu prirodu." %}</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-hiking"></i></div>
+                <h3>{% trans "Planina Cincar" %}</h3>
+                <p>{% trans "Otkrijte skrivene planinarske staze, osvojite vrhove planine Cincar i udahnite najčistiji planinski zrak daleko od civilizacije." %}</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

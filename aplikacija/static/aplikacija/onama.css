@@ -1,0 +1,122 @@
+/* Glavni kontejner i razmak od navbara */
+.about-page {
+    background-color: transparent;
+    padding: 150px 20px 100px 20px;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Mreža: 2 kolone na PC-u, 1 kolona na mobitelu */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* --- LIJEVA STRANA (Tekst) --- */
+.about-subtitle {
+    color: #f0c27b;
+    font-size: 14px;
+    letter-spacing: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.about-content h1 {
+    color: #fff;
+    font-size: 46px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* Zlatna linija ispod naslova */
+.title-line {
+    width: 60px;
+    height: 3px;
+    background-color: #f0c27b;
+    margin-bottom: 30px;
+}
+
+.about-content p {
+    color: #aaa;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Ikonice ispod teksta */
+.about-stats {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 30px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ddd;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.stat-item i {
+    color: #f0c27b;
+    font-size: 20px;
+}
+
+/* --- DESNA STRANA (Slika unutar okvira) --- */
+.about-image-wrapper {
+    position: relative;
+    /* Povećavamo padding kako bi okvir bio vizualno odvojen od rubova grid-a */
+    padding: 30px; 
+}
+
+/* Zlatni okvir - sada je iste veličine kao i slika i centriran */
+.about-image-wrapper::before {
+    content: "";
+    position: absolute;
+    /* Postavljamo okvir točno na rubove paddinga */
+    top: 30px;
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+    border: 2px solid #f0c27b;
+    z-index: 0; /* Okvir ostaje iza slike */
+}
+
+/* Sama slika kontejner */
+.image-frame {
+    position: relative;
+    z-index: 1; /* Slika ide ispred okvira */
+    overflow: hidden;
+    /* Dodajemo mali margin kako bi se stvorio tanki prozirni rub između slike i zlatnog okvira */
+    margin: 3px; 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* Mijenjamo omjer u 1/1 (kvadrat) ili ga skroz ukloni ako želiš originalni format slike */
+    /* Kvadratni format će bolje izgledati unutar ovakvog okvira */
+    aspect-ratio: 1 / 1; 
+    transition: transform 0.6s ease;
+}
+
+/* Hover efekt - lagano zumiranje slike (slika ostaje unutar okvira zbog overflow:hidden) */
+.image-frame:hover img {
+    transform: scale(1.05);
+}

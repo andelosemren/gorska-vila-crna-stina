@@ -1,0 +1,83 @@
+/* Glavni kontejner i razmak od navbara */
+.rules-page {
+    background-color: transparent;
+    padding: 150px 20px 100px 20px;
+}
+
+.rules-container {
+    max-width: 900px; /* Malo uže od galerije da tekst bude lakši za čitanje */
+    margin: 0 auto;
+}
+
+/* Naslovni dio */
+.rules-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.rules-header h1 {
+    color: #f0c27b;
+    font-size: 42px;
+    letter-spacing: 5px;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.rules-header p {
+    color: #888;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+/* Kartice za pravila */
+.rules-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Razmak između kartica */
+}
+
+.rule-card {
+    background: rgba(255, 255, 255, 0.03); /* Lagano prozirna siva */
+    border-left: 4px solid #f0c27b; /* Zlatna linija s lijeve strane! */
+    padding: 30px;
+    border-radius: 0 8px 8px 0; /* Zaobljeni rubovi samo s desne strane */
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.rule-card:hover {
+    transform: translateX(10px); /* Kartica se lagano pomakne udesno kad pređeš mišem */
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Ikonice (Font Awesome) */
+.rule-icon {
+    font-size: 35px;
+    color: #f0c27b;
+    min-width: 50px; /* Da tekst uvijek bude poravnat, bez obzira na širinu ikonice */
+    text-align: center;
+    padding-top: 5px;
+}
+
+/* Tekst u karticama */
+.rule-text h3 {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.rule-text p {
+    color: #aaa;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.rule-text strong {
+    color: #ddd; /* Istaknute riječi unutar teksta */
+    font-weight: 600;
+}

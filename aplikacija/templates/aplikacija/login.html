@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load i18n %} {% block content %}
+<div class="auth-container">
+    <div class="auth-card">
+        <h1>{% trans "Prijava" %}</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            
+            <label for="username">{% trans "Korisničko ime" %}</label>
+            <input type="text" name="username" id="username" required>
+            
+            <label for="password">{% trans "Lozinka" %}</label>
+            <input type="password" name="password" id="password" required>
+
+            {% for message in messages %}
+                <p class="error-msg">{{ message }}</p>
+            {% endfor %} 
+            
+            <input type="submit" value="{% trans 'Prijavi se' %}">
+        </form>
+
+        <div style="margin-top: 25px; display: flex; flex-direction: column; gap: 10px; font-size: 13px;">
+            <a href="{% url 'reset_password' %}">{% trans "Zaboravili ste lozinku?" %}</a>
+            <p style="margin:0; color:#aaa;">{% trans "Ako nisi prijavljen," %} <a href="{% url 'register' %}">{% trans "registriraj se ovdje" %}</a>.</p>
+        </div>
+</div>
+{% endblock content %}
