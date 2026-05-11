@@ -13,6 +13,7 @@ urlpatterns = [
     path("logout/", views.LogoutUser, name='logout'),   
     path("booking/", views.booking, name="booking"),
     path('profil/', views.uredi_profil, name='profil'),
+    path('chatbot-odgovor/', views.chatbot_odgovor, name='chatbot_odgovor'),
     path('otkazi-rezervaciju/<int:rezervacija_id>/', views.otkazi_rezervaciju, name='otkazi_rezervaciju'),
     path('promijeni-lozinku/', views.promijeni_lozinku, name='promijeni_lozinku'),
     path('reset-lozinke/', auth_views.PasswordResetView.as_view(template_name="aplikacija/reset_lozinke.html"), name="reset_password"),

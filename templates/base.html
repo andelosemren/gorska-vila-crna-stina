@@ -44,6 +44,144 @@
         object-fit: cover !important;
         border-radius: 2px;
       }
+      /* --- CHATBOT PREMIUM STILOVI --- */
+
+/* Lebdeći gumb u donjem desnom kutu */
+.chatbot-toggler {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #d4af37; /* Zlatna boja */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.chatbot-toggler:hover {
+    transform: scale(1.1);
+}
+
+/* Glavni prozor chata */
+.chatbot-prozor {
+    position: fixed;
+    bottom: 100px; /* Malo iznad gumba */
+    right: 30px;
+    width: 350px;
+    background-color: #1a1a1a; /* Tamna tema */
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    overflow: hidden;
+    z-index: 1000;
+    border: 1px solid #d4af37; /* Zlatni okvir */
+    transition: opacity 0.3s ease;
+}
+
+/* Klasa za sakrivanje prozora */
+.sakriveno {
+    display: none;
+}
+
+.chatbot-header {
+    background-color: #2c2c2c;
+    padding: 15px;
+    text-align: center;
+    color: #d4af37;
+    position: relative;
+    border-bottom: 1px solid #444;
+}
+
+.chatbot-header h3 {
+    margin: 0;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.zatvori-btn {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Područje za poruke */
+.chatbox {
+    height: 300px;
+    overflow-y: auto;
+    padding: 15px;
+    list-style: none;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chat-poruka p {
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    max-width: 80%;
+    word-wrap: break-word;
+    margin: 0;
+}
+
+/* Izgled poruke od bota */
+.chat-poruka.bot p {
+    background-color: #333;
+    color: #fff;
+    align-self: flex-start;
+    border-bottom-left-radius: 0;
+}
+
+/* Izgled poruke od korisnika */
+.chat-poruka.korisnik p {
+    background-color: #d4af37;
+    color: #000;
+    align-self: flex-end;
+    border-bottom-right-radius: 0;
+}
+
+/* Područje za unos teksta */
+.chat-input-container {
+    display: flex;
+    padding: 10px;
+    background-color: #2c2c2c;
+    border-top: 1px solid #444;
+}
+
+.chat-input-container textarea {
+    flex: 1;
+    height: 40px;
+    background-color: #1a1a1a;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 10px;
+    resize: none;
+    outline: none;
+    font-family: inherit;
+}
+
+.posalji-btn {
+    background-color: #d4af37;
+    color: black;
+    border: none;
+    padding: 0 15px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
     </style>
   </head>
 
@@ -153,5 +291,91 @@
         icon.classList.toggle("fa-times");
       };
     </script>
+    <button id="chatbot-toggler" class="chatbot-toggler">
+    💬 </button>
+
+<div id="chatbot-prozor" class="chatbot-prozor sakriveno">
+    <div class="chatbot-header">
+        <h3>Gorska Vila Asistent</h3>
+        <button id="zatvori-chat" class="zatvori-btn">✖</button>
+    </div>
+    <ul id="chatbox" class="chatbox">
+        <li class="chat-poruka bot">
+            <p>Dobar dan! Ja sam asistent Gorske Vile. Kako Vam mogu pomoći oko rezervacije ili informacija?</p>
+        </li>
+    </ul>
+    <div class="chat-input-container">
+        <input type="hidden" id="csrf_token" value="{{ csrf_token }}">
+        <textarea id="chat-input" placeholder="Upišite poruku ovdje..." required></textarea>
+        <button id="posalji-btn" class="posalji-btn">➤</button>
+    </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const toggler = document.getElementById("chatbot-toggler");
+        const prozor = document.getElementById("chatbot-prozor");
+        const zatvoriBtn = document.getElementById("zatvori-chat");
+        const inputPolje = document.getElementById("chat-input");
+        const posaljiBtn = document.getElementById("posalji-btn");
+        const chatbox = document.getElementById("chatbox");
+        const csrfToken = document.getElementById("csrf_token").value;
+
+        // Otvaranje i zatvaranje
+        toggler.addEventListener("click", () => {
+            prozor.classList.toggle("sakriveno");
+        });
+
+        zatvoriBtn.addEventListener("click", () => {
+            prozor.classList.add("sakriveno");
+        });
+
+        function dodajPoruku(tekst, posiljatelj) {
+            const li = document.createElement("li");
+            li.classList.add("chat-poruka", posiljatelj);
+            li.innerHTML = `<p>${tekst}</p>`;
+            chatbox.appendChild(li);
+            chatbox.scrollTop = chatbox.scrollHeight;
+        }
+
+        async function posaljiPoruku() {
+            const poruka = inputPolje.value.trim();
+            if (!poruka) return;
+
+            dodajPoruku(poruka, "korisnik");
+            inputPolje.value = "";
+
+            try {
+                // Šaljemo samo jedan zahtjev u JSON formatu
+                const response = await fetch("/chatbot-odgovor/", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "X-CSRFToken": csrfToken 
+                    },
+                    body: JSON.stringify({ "poruka": poruka })
+                });
+
+                const data = await response.json();
+                
+                if (response.ok) {
+                    dodajPoruku(data.odgovor, "bot");
+                } else {
+                    dodajPoruku("Greška: " + data.odgovor, "bot");
+                }
+            } catch (error) {
+                dodajPoruku("Pojavio se problem s mrežom. Pokušajte ponovno.", "bot");
+            }
+        }
+
+        posaljiBtn.addEventListener("click", posaljiPoruku);
+        
+        inputPolje.addEventListener("keypress", function(e) {
+            if (e.key === "Enter" && !e.shiftKey) {
+                e.preventDefault();
+                posaljiPoruku();
+            }
+        });
+    });
+</script>
   </body>
 </html>

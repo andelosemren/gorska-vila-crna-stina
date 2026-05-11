@@ -7,6 +7,9 @@ from django.contrib.auth import login, logout, authenticate, update_session_auth
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
 from django.core.mail import send_mail
+import google.generativeai as genai
+from django.conf import settings
+from django.http import JsonResponse
 
 from .models import Booking
 from .forms import RegisterForm, UserEditForm
@@ -204,3 +207,45 @@ def promijeni_lozinku(request):
         form = PasswordChangeForm(request.user)
     
     return render(request, 'aplikacija/promijeni_lozinku.html', {'form': form})
+
+def chatbot_odgovor(request):
+    if request.method == "POST":
+        try:
+            # Čitamo podatke u modernom JSON formatu
+            body_unicode = request.body.decode('utf-8')
+            body_data = json.loads(body_unicode)
+            user_poruka = body_data.get('poruka')
+            
+            genai.configure(api_key=settings.AI_API_KEY)
+            
+            # PROŠIRENO ZNANJE BOTA
+            model = genai.GenerativeModel(
+                model_name="gemini-1.5-flash",
+                system_instruction="""
+                Ti si ekskluzivni asistent luksuzne vile 'Gorska Vila Crna Stina'.
+                Tvoj ton je profesionalan, uslužan i srdačan. Odgovaraj na hrvatskom jeziku.
+                
+                INFORMACIJE O VILI:
+                - Lokacija: Livno, Bosna i Hercegovina. Oaza mira u prirodi.
+                - Sadržaj: Vila nudi vrhunski vanjski bazen, modernu opremu i unikatni hrastov blagovaonski stol s epoksijem.
+                - Cijene noćenja: 
+                  * 1 do 2 noći = 500 € po noći
+                  * 3 do 4 noći = 300 € po noći
+                  * 5 do 9 noći = 250 € po noći
+                  * 10 i više noći = 200 € po noći
+                - Dodatni troškovi: Jednokratna naknada za čišćenje iznosi 50 €.
+                - Popusti: Za rezervacije od 7 ili više noćenja, gosti ostvaruju 10% popusta na ukupnu cijenu.
+                - Nagrade: Imamo aktualnu nagradnu igru i poklon bon u iznosu od 1000 KM.
+                - Rezervacije: Uvijek uputi goste da koriste kalendar na web stranici za odabir datuma.
+                
+                Pravila ponašanja: Odgovaraj kratko (maksimalno 2-3 rečenice), jasno i bez previše kompliciranja. Ako ne znaš odgovor, uputi gosta da ispuni kontakt formu.
+                """
+            )
+
+            response = model.generate_content(user_poruka)
+            return JsonResponse({'odgovor': response.text})
+            
+        except Exception as e:
+            return JsonResponse({'odgovor': "Oprostite, trenutno ažuriram sustav. Molim Vas pokušajte ponovno za par sekundi."}, status=500)
+
+    return JsonResponse({'odgovor': 'Pogrešan zahtjev.'}, status=400)

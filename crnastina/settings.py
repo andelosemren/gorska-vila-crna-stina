@@ -11,6 +11,15 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+import environ
+
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# SADA KADA ZNAMO ŠTO JE BASE_DIR, MOŽEMO PROČITATI .env SEF:
+env = environ.Env()
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -133,3 +142,6 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'luxurycrnastina@gmail.com' # Tvoj stvarni email
 EMAIL_HOST_PASSWORD = 'hsqpkvikjnoafhcc' # Ovo moraš generirati na Googleu!
+
+# Naš tajni ključ za Chatbota
+AI_API_KEY = env('AI_API_KEY', default='')
