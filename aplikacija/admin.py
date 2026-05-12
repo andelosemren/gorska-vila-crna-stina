@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Booking 
+from .models import Recenzija
 
 class BookingAdmin(admin.ModelAdmin):
     # OVO SU STUPCI: Sada se točno poklapaju s tvojim models.py
@@ -12,3 +13,19 @@ class BookingAdmin(admin.ModelAdmin):
     search_fields = ('phone_number', 'user__username')
 
 admin.site.register(Booking, BookingAdmin)
+
+
+
+@admin.register(Recenzija)
+class RecenzijaAdmin(admin.ModelAdmin):
+    # Što želimo vidjeti u tablici
+    list_display = ('ime_gosta', 'ocjena', 'datum', 'odobreno')
+    
+    # OVO JE MAGIJA: Omogućava ti da staviš kvačicu za odobrenje bez ulaska u samu recenziju!
+    list_editable = ('odobreno',) 
+    
+    # Filteri sa strane (npr. prikaži mi samo neodobrene ili samo one s 5 zvjezdica)
+    list_filter = ('odobreno', 'ocjena', 'datum')
+    
+    # Polje za pretraživanje po imenu gosta
+    search_fields = ('ime_gosta', 'tekst')

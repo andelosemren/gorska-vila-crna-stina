@@ -14,7 +14,7 @@ import google.generativeai as genai
 from django.conf import settings
 from django.http import JsonResponse
 
-from .models import Booking
+from .models import Booking, Recenzija
 from .forms import RegisterForm, UserEditForm
 # Create your views here.
 
@@ -130,7 +130,33 @@ def booking(request):
 
     return render(request, "aplikacija/booking.html", context)
 def home(request):
-    return render(request,"aplikacija/home.html")
+    # 1. AKO GOST ŠALJE NOVU RECENZIJU (Hvatanje podataka iz forme)
+    if request.method == 'POST' and 'spremi_recenziju' in request.POST:
+        ime = request.POST.get('ime_gosta')
+        ocjena = request.POST.get('ocjena')
+        tekst = request.POST.get('tekst')
+        
+        # Provjera jesu li sva polja ispunjena
+        if ime and ocjena and tekst:
+            Recenzija.objects.create(
+                ime_gosta=ime,
+                ocjena=int(ocjena),
+                tekst=tekst,
+                odobreno=False  # OBAVEZNO FALSE - čeka tvoje odobrenje!
+            )
+            messages.success(request, "Hvala Vam! Vaša recenzija je uspješno poslana i bit će prikazana nakon odobrenja.")
+            return redirect('pocetna') # Vraća korisnika nazad na početnu stranicu
+            
+    # 2. POVLAČENJE ODOBRENIH RECENZIJA ZA PRIKAZ NA STRANICI
+    # Povlačimo samo one koje imaju kvačicu (odobreno=True) i to najnovije prve
+    odobrene_recenzije = Recenzija.objects.filter(odobreno=True).order_by('-datum')
+    
+    # Šaljemo te recenzije u naš home.html kako bismo ih mogli prikazati
+    context = {
+        'recenzije': odobrene_recenzije
+    }
+    
+    return render(request, "aplikacija/home.html", context)
 
 def onama(request):
     return render(request,'aplikacija/onama.html')
