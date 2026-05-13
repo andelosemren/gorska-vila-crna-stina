@@ -111,49 +111,67 @@
         </a>
     </div>
 </section>
-<section class="about-villa" style="background-color: #0d1117; padding-top: 60px;">
-    <div class="about-container">
-        <h2 style="font-size: 32px; margin-bottom: 50px;">{% trans "Riječ naših gostiju" %}</h2>
-        
-        <div class="features-grid">
-            <div class="feature-card" style="padding: 40px 30px; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                    <div style="color: #f0c27b; font-size: 16px; margin-bottom: 20px; letter-spacing: 2px;">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p style="font-style: italic; color: #ccc; font-size: 16px; margin-bottom: 25px;">"{% trans "Nevjerojatno iskustvo! Vila uživo izgleda još bolje nego na slikama. Mir, tišina i beskompromisni luksuz." %}"</p>
-                </div>
-                <div>
-                    <h4 style="color: #fff; font-weight: 500; letter-spacing: 1px; font-size: 16px;">Marko & Ana</h4>
-                    <span style="color: #777; font-size: 13px;">{% trans "Hrvatska" %} 🇭🇷</span>
-                </div>
-            </div>
+<!-- === KNJIGA DOJMOVA (RECENZIJE) === -->
+<section class="recenzije-sekcija">
+    <div class="kontejner">
+        <h2 class="zlatni-naslov">Iskustva naših gostiju</h2>
+        <p class="podnaslov">Što gosti kažu o boravku u Gorskoj Vili Crna Stina</p>
 
-            <div class="feature-card" style="padding: 40px 30px; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                    <div style="color: #f0c27b; font-size: 16px; margin-bottom: 20px; letter-spacing: 2px;">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <!-- Prikaz odobrenih recenzija -->
+        <div class="recenzije-grid">
+            {% if recenzije %}
+                {% for r in recenzije %}
+                <div class="recenzija-kartica">
+                    <div class="zvijezdice">
+                        Ocjena: <span class="zlatni-tekst">{{ r.ocjena }} / 5 ★</span>
                     </div>
-                    <p style="font-style: italic; color: #ccc; font-size: 16px; margin-bottom: 25px;">"{% trans "Savršen bijeg od stresa. Bazen je fantastičan, a buđenje uz pogled na prirodu je neprocjenjivo. Vraćamo se opet!" %}"</p>
+                    <p class="recenzija-tekst">"{{ r.tekst }}"</p>
+                    <h4 class="recenzija-autor">- {{ r.ime_gosta }}</h4>
                 </div>
-                <div>
-                    <h4 style="color: #fff; font-weight: 500; letter-spacing: 1px; font-size: 16px;">Michael</h4>
-                    <span style="color: #777; font-size: 13px;">{% trans "Velika Britanija" %} 🇬🇧</span>
-                </div>
-            </div>
+                {% endfor %}
+            {% else %}
+                <p class="nema-recenzija">Budite prvi koji će ostaviti dojam o našoj vili!</p>
+            {% endif %}
+        </div>
 
-            <div class="feature-card" style="padding: 40px 30px; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                    <div style="color: #f0c27b; font-size: 16px; margin-bottom: 20px; letter-spacing: 2px;">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p style="font-style: italic; color: #ccc; font-size: 16px; margin-bottom: 25px;">"{% trans "Domaćini su mislili na apsolutno svaki detalj. Sve je besprijekorno čisto, a večernja atmosfera uz kamin je magična." %}"</p>
+        <!-- Forma za ostavljanje nove recenzije -->
+        <div class="nova-recenzija-box">
+            <h3 class="zlatni-naslov-mali">Podijelite svoje iskustvo</h3>
+            
+            <!-- Prikaz poruke zahvale nakon slanja -->
+            {% if messages %}
+                <div class="poruke-sustava">
+                    {% for message in messages %}
+                        <p class="uspjeh-poruka">{{ message }}</p>
+                    {% endfor %}
                 </div>
-                <div>
-                    <h4 style="color: #fff; font-weight: 500; letter-spacing: 1px; font-size: 16px;">Sarah & Thomas</h4>
-                    <span style="color: #777; font-size: 13px;">{% trans "Njemačka" %} 🇩🇪</span>
+            {% endif %}
+
+            <form method="POST" class="recenzija-forma">
+                {% csrf_token %}
+                <input type="hidden" name="spremi_recenziju" value="1">
+                
+                <div class="forma-grupa">
+                    <input type="text" name="ime_gosta" required placeholder="Vaše ime i prezime">
                 </div>
-            </div>
+                
+                <div class="forma-grupa">
+                    <select name="ocjena" required>
+                        <option value="" disabled selected>Odaberite ocjenu...</option>
+                        <option value="5">★★★★★ (5) - Vrhunski, za svaku preporuku!</option>
+                        <option value="4">★★★★☆ (4) - Jako dobro</option>
+                        <option value="3">★★★☆☆ (3) - U redu</option>
+                        <option value="2">★★☆☆☆ (2) - Moglo je i bolje</option>
+                        <option value="1">★☆☆☆☆ (1) - Loše</option>
+                    </select>
+                </div>
+                
+                <div class="forma-grupa">
+                    <textarea name="tekst" rows="4" required placeholder="Napišite kratak dojam o vašem boravku i što vam se najviše svidjelo..."></textarea>
+                </div>
+                
+                <button type="submit" class="zlatni-gumb">Pošalji recenziju</button>
+            </form>
         </div>
     </div>
 </section>
