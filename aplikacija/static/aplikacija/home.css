@@ -600,3 +600,31 @@
     border: 1px solid #d4af37;
     margin-bottom: 20px;
 }
+/* --- INTERAKTIVNA MAPA STILOVI --- */
+.mapa-sekcija {
+    background-color: #121212; /* Ista tamna pozadina kao kod recenzija */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#luksuzna-mapa {
+    height: 500px; /* Visina mape */
+    width: 100%;
+    max-width: 1000px; /* Ne dopuštamo da se previše raširi na velikim ekranima */
+    margin: 0 auto;
+    border-radius: 15px; /* Zaobljeni rubovi */
+    border: 2px solid #d4af37; /* Zlatni okvir */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    z-index: 1; /* Da ne smeta chatbota */
+}
+
+/* Stil za Popup prozorčiće unutar mape kad se klikne na marker */
+.leaflet-popup-content-wrapper {
+    background-color: #1a1a1a;
+    color: #fff;
+    border: 1px solid #d4af37;
+    border-radius: 8px;
+}
+.leaflet-popup-tip {
+    background-color: #d4af37;
+}
